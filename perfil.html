@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <style>
+        /* Estilos globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+        }
+
+        .profile-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .profile-container:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        .profile-info {
+            margin-bottom: 30px;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 1.5em;
+        }
+
+        .profile-info input,
+        .profile-info select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: border 0.3s ease-in-out;
+        }
+
+        .profile-info input:focus,
+        .profile-info select:focus {
+            border: 1px solid #4CAF50;
+            outline: none;
+        }
+
+        .btn-editar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-editar:hover {
+            background-color: #45a049;
+        }
+
+        .btn-editar:active {
+            transform: scale(0.98);
+        }
+
+        .btn-limpar {
+            background-color: #f44336;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+            margin-left: 350px;
+        }
+
+        .btn-limpar:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-limpar:active {
+            transform: scale(0.98);
+        }
+    </style>
+    <script>
+        // Função para validar campos obrigatórios e armazenar dados no localStorage
+        function validateForm(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const form = event.target;
+            let isValid = true;
+
+            const requiredFields = form.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    isValid = false;
+                    field.style.border = '2px solid red'; // Destaca o campo com erro
+                } else {
+                    field.style.border = '1px solid #ccc'; // Restaura a borda normal
+                }
+            });
+
+            if (!isValid) {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            } else {
+                // Armazenar os dados no localStorage
+                localStorage.setItem('estado_fisico', document.getElementById('estado_fisico').value);
+                localStorage.setItem('frequencia_treino', document.getElementById('frequencia_treino').value);
+                localStorage.setItem('objetivo_principal', document.getElementById('objetivo_principal').value);
+                localStorage.setItem('atividades_preferidas', document.getElementById('atividades_preferidas').value);
+                localStorage.setItem('peso', document.getElementById('peso').value);
+                localStorage.setItem('idade', document.getElementById('idade').value);
+                localStorage.setItem('altura', document.getElementById('altura').value);
+
+                // Redirecionar para a página de visualização
+                window.location.href = "perfil_salvos.html";
+            }
+        }
+
+        // Função para limpar todos os campos do formulário
+        function clearForm() {
+            const form = document.querySelector('form');
+            const fields = form.querySelectorAll('input, select');
+            fields.forEach(field => {
+                field.value = '';
+            });
+        }
+
+        // Função para carregar os dados do localStorage quando a página for carregada
+        function loadProfile() {
+            if (localStorage.getItem('estado_fisico')) {
+                document.getElementById('estado_fisico').value = localStorage.getItem('estado_fisico');
+            }
+            if (localStorage.getItem('frequencia_treino')) {
+                document.getElementById('frequencia_treino').value = localStorage.getItem('frequencia_treino');
+            }
+            if (localStorage.getItem('objetivo_principal')) {
+                document.getElementById('objetivo_principal').value = localStorage.getItem('objetivo_principal');
+            }
+            if (localStorage.getItem('atividades_preferidas')) {
+                document.getElementById('atividades_preferidas').value = localStorage.getItem('atividades_preferidas');
+            }
+            if (localStorage.getItem('peso')) {
+                document.getElementById('peso').value = localStorage.getItem('peso');
+            }
+            if (localStorage.getItem('idade')) {
+                document.getElementById('idade').value = localStorage.getItem('idade');
+            }
+            if (localStorage.getItem('altura')) {
+                document.getElementById('altura').value = localStorage.getItem('altura');
+            }
+        }
+
+        // Carregar os dados do perfil quando a página for carregada
+        window.onload = loadProfile;
+    </script>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Editar Perfil</h1>
+        <form onsubmit="validateForm(event)">
+            <div class="profile-info">
+                <h2>Estado Físico</h2>
+                <select id="frequencia_treino" name="frequencia_treino" required>
+                    <option value="">Selecione</option>
+                    <option value="diariamente">Sedentário</option>
+                    <option value="semanalmente">Iniciante</option>
+                    <option value="mensalmente">Médio</option>
+                    <option value="mensalmente">Avançado</option>
+                </select>
+                <input type="text" id="estado_fisico" placeholder="Descreva seu estado físico" name="estado_fisico" required />
+            </div>
+            <div class="profile-info">
+                <h2>Frequência de Treino</h2>
+                <select id="frequencia_treino" name="frequencia_treino" required>
+                    <option value="">Selecione</option>
+                    <option value="diariamente">Diariamente</option>
+                    <option value="semanalmente">Semanalmente</option>
+                    <option value="mensalmente">Mensalmente</option>
+                </select>
+            </div>
+            <div class="profile-info">
+                <h2>Objetivo Principal</h2>
+                <input type="text" id="objetivo_principal" placeholder="Qual é o seu principal objetivo?" name="objetivo_principal" required />
+            </div>
+            <div class="profile-info">
+                <h2>Atividades Físicas Preferidas</h2>
+                <input type="text" id="atividades_preferidas" placeholder="Quais são suas atividades físicas preferidas?" name="atividades_preferidas" required />
+            </div>
+            <div class="profile-info">
+                <h2>Peso (kg)</h2>
+                <input type="number" id="peso" placeholder="Digite seu peso" name="peso" step="0.1" required />
+            </div>
+            <div class="profile-info">
+                <h2>Idade</h2>
+                <input type="number" id="idade" placeholder="Digite sua idade" name="idade" required />
+            </div>
+            <div class="profile-info">
+                <h2>Altura (cm)</h2>
+                <input type="number" id="altura" placeholder="Digite sua altura" name="altura" step="1" required />
+            </div>
+            
+            <button type="submit" class="btn-editar">Salvar Dados</button>
+            <button type="button" class="btn-limpar" onclick="clearForm()">Limpar Dados</button>
+        </form>
+    </div>
+</body>
+</html>

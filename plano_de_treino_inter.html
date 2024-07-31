@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de treino intermediario</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: space-between; 
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid rgba(56, 52, 52, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(56, 50, 50, 0.1);
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            color: rgb(37, 30, 30);
+            position: relative;
+            overflow-y: auto; 
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            flex-grow: 1;
+        }
+
+        .search-box button {
+            background-color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .plan-box {
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 20px; 
+            margin-top: 10px; 
+            margin-bottom: 10px; 
+            text-align: center; 
+        }
+
+        .plan-box h1 {
+            margin: 5px 0; 
+            font-size: 18px; 
+        }
+
+        .estado-atual {
+            margin-top: 20px;
+        }
+
+        .estado-atual hr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+       
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>ALL DAY</h1>
+            <img class="logo" src="ALL_DAY_LOGO.png" alt="Logo">
+            <a href="documentp.html">Questionário</a>
+            <a href="planos_de_treinos.html">Plano de Treino</a>
+            <a href="perfil.html">Conta</a>
+            <a href="tela_inicial.html" class="active">Voltar</a>
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1>Plano de treino:</h1>
+                <div class="search-box">
+                    <script>
+                        function pesquisar() {
+                            const termo = document.getElementById('input-pesquisa').value.toLowerCase();
+                
+                            if (!termo) {
+                                alert('Por favor, insira uma palavra-chave para pesquisar.');
+                                return;
+                            }
+                
+                            if (termo.includes('iniciante')) {
+                                window.location.href = 'plano_de_treino_iniciante.html';
+                            } else if (termo.includes('avançado')) {
+                                window.location.href = 'plano_de_treino_avançado.html';
+                            } else if (termo.includes('intermediario')) {
+                                window.location.href = 'plano_de_treino_inter.html';
+                            } else if (termo.includes('sedentario')) {
+                                window.location.href = 'plano_de_treino_seden.html';
+                            }else {
+                                alert('Nenhuma página correspondente encontrada.');
+                            }
+                        }
+                    </script>
+                </head>
+                
+                <input type="text" id="input-pesquisa" placeholder="Pesquisar">
+                
+                <button class="search-button" onclick="pesquisar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="plan-box">
+                <h1>Treino para Intermediários - Segunda-feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Supino Reto 4x8</h1>
+                <h1>Barra Fixa 4x8</h1>
+                <h1>Elevação Frontal com Halteres 3x10</h1>
+                <h1>Tríceps Pulley 3x10</h1>
+                <h1>Abdominal Crunch 3x15</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino para Intermediários - Terça-feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Agachamento Livre 4x8</h1>
+                <h1>Cadeira Extensora 3x10</h1>
+                <h1>Leg Press 3x10</h1>
+                <h1>Elevação de Panturrilha Sentado 3x12</h1>
+                <h1>Prancha 3x30s</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino para Intermediários - Quarta-feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Desenvolvimento com Barra 4x8</h1>
+                <h1>Elevação Lateral 3x10</h1>
+                <h1>Puxada Alta 3x10</h1>
+                <h1>Curl de Bíceps com Barra 3x10</h1>
+                <h1>Abdominal Supra 3x15</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Quinta-feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Descanso</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino para Intermediários - Sexta-feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Pulldown 4x8</h1>
+                <h1>Rosca Direta 3x10</h1>
+                <h1>Flexão de Pernas (Máquina Flexora) 3x10</h1>
+                <h1>Elevação de Panturrilha em Pé 3x12</h1>
+                <h1>Prancha Lateral 3x30s (cada lado)</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino para Intermediários - Sábado:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Remada Curvada 4x8</h1>
+                <h1>Tríceps Francês 3x10</h1>
+                <h1>Cadeira Adutora 3x10</h1>
+                <h1>Cadeira Abdutora 3x10</h1>
+                <h1>Abdominal Oblíquo 3x15</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

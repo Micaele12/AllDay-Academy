@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL DAY - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="tela_homer.php">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #7f7f7d;
+        }
+
+        .banner {
+            background-image: url('imagem_2024-05-13_225916674.png');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #51d74c;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #656563;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .services .service-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .services .service-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .services .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .services .service-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .services .service-item p {
+            color: #666;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form label {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            background:#51d74c ;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .contact form button:hover {
+            background: #8c8c88;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ALL DAY</div>
+        <nav>
+            <ul>
+                <li><a href="tela_inicial.html">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="planos_de_treinos.html">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Bem-vindo à ALL DAY</h1>
+            <p>Seu lugar para alcançar os objetivos fitness!</p>
+            <a href="#services" class="btn">Nossos Serviços</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>  </p>
+    </footer>
+
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <p><strong>Sobre a Academia All Day</strong></p>
+        <p>Em 2010, um grupo de visionários fundou uma academia com uma missão clara em mente: promover a saúde física, mental e emocional, <br> enquanto cultivava uma comunidade vibrante e inclusiva. Essa academia, desde então, tornou-se um farol de valores e ideais que transcendem <br> a simples busca por um corpo "perfeito". <br><br>
+
+            Os valores fundamentais de nossa academia estão enraizados na crença de que o bem-estar é uma jornada holística. <br> Assim, o primeiro valor que guia todas as suas atividades é o compromisso com a saúde integral. Isso significa oferecer uma variedade de <br> programas e serviços que vão além do simples exercício físico, incluindo nutrição, mindfulness, yoga e até mesmo workshops sobre bem-estar emocional. <br><br>
+            
+            Além disso, a academia valoriza a inclusão e a diversidade. Desde o seu início, tem sido um espaço acolhedor para pessoas de todas as idades, <br> gêneros, orientações sexuais, origens étnicas e níveis de habilidade. Acreditam que todos têm o direito de se sentir bem-vindos e respeitados enquanto <br> trabalham para alcançar seus objetivos de saúde. <br><br>
+            
+            Outro pilar fundamental é a excelência. A nossa academia se esforça para oferecer os mais altos padrões de qualidade em todos os aspectos, desde a <br> seleção de instrutores altamente qualificados até a manutenção de instalações impecáveis ​​em nosso site. A busca pela excelência também se reflete na <br>constante busca por inovação e melhoria contínua em seus programas e serviços. <br> <br>
+            
+            A comunidade é outro aspecto essencial dessa academia. Mais do que apenas um lugar para se exercitar, é um local onde as amizades <br> são criadas, os laços são fortalecidos e o apoio mútuo é incentivado. Eventos sociais, competições amigáveis ​​e atividades em grupo são organizados <br> regularmente para promover um senso de pertencimento e brotheragem entre os membros. <br> <br>
+            
+            Além disso, a responsabilidade social é uma preocupação central. A nossa academia se envolve ativamente em iniciativas comunitárias,<br> apoiando causas locais e promovendo a conscientização sobre questões de saúde pública. Nós acreditamos que temos a responsabilidade de retribuir à <br> comunidade que os apoiou ao longo dos anos. <br><br>
+            
+            Por fim, a busca pela felicidade é um valor que permeia todas as atividades da academia. Eles reconhecem que a verdadeira saúde vai além do físico e buscam <br> criar um ambiente onde os membros se sintam felizes, motivados e inspirados a viver suas melhores vidas.
+          .</p>
+    </section>
+
+    <footer>
+        <p>  </p>
+    </footer>
+
+    <section id="history">
+        <h2>História</h2>
+        <p><strong>Sobre a Academia All Day</strong></p>
+        <p>A história da Academia ALL DAY começou em 2010, quando um grupo de amigos apaixonados por saúde e bem-estar se reuniu com um <br> objetivo comum: criar um espaço onde as pessoas pudessem se exercitar, aprender sobre nutrição e cuidar de sua saúde de forma integral. <br>Com esse sonho em mente, eles começaram a planejar e a trabalhar arduamente para torná-lo realidade.
+
+            Inicialmente, a jornada foi desafiadora. <br> <br> Eles enfrentaram dificuldades financeiras, burocráticas e logísticas para encontrar um local adequado e equipá-lo com os recursos necessários para <br> uma academia funcional. No entanto, a determinação e a paixão pelo projeto mantiveram-nos motivados, e eles perseveraram apesar dos obstáculos. <br>
+            
+            Finalmente, após meses de trabalho árduo, a Academia Vitalidade abriu suas portas pela primeira vez. Localizada em um espaço modesto, mas acolhedor, <br> ela rapidamente começou a atrair membros que compartilhavam a visão de seus fundadores. O boca a boca e as mídias sociais desempenharam um <br>papel crucial na divulgação da academia, e logo ela se tornou um ponto de encontro para aqueles que buscavam uma abordagem holística para a saúde. <br>
+            
+            Com o passar dos anos, a Academia ALL DAY expandiu suas instalações e sua oferta de serviços. Novas salas foram adicionadas para acomodar uma variedade <br> de atividades, como aulas de yoga, pilates, dança e artes marciais. Além disso, a equipe de instrutores cresceu, trazendo especialistas em diferentes áreas <br> para enriquecer a experiência dos membros. <br> <br>
+            
+            Mas mais do que apenas um lugar para se exercitar, a Academia Vitalidade se tornou uma comunidade. Os membros não apenas se reuniam para treinar juntos, <br> mas também para compartilhar experiências, apoiar-se mutuamente e celebrar conquistas. Eventos sociais, competições amigáveis ​​e workshops educacionais <br> foram organizados regularmente para fortalecer os laços entre os membros e promover um senso de pertencimento.
+            
+            Ao longo dos anos, a Academia ALL DAY <br>continuou a evoluir, adaptando-se às necessidades e interesses de seus membros. Programas de treinamento personalizado foram introduzidos para atender às <br> metas individuais de condicionamento físico, enquanto eventos temáticos e desafios sazonais mantiveram a motivação alta.
+            <br>
+            Além disso, a academia sempre manteve um compromisso com a responsabilidade social. Participando de campanhas de conscientização, arrecadação de <br> fundos para causas beneficentes e oferecendo programas de fitness acessíveis para grupos desfavorecidos, a Academia Vitalidade demonstrou seu <br>compromisso com o bem-estar da comunidade em geral. <br><br>
+            
+            Hoje, após mais de uma década desde sua fundação, a Academia ALL DAY continua a prosperar. <br> Ela se tornou um ponto de referência na comunidade, reconhecida não apenas por sua excelência em fitness, mas também por sua abordagem holística <br> e seu compromisso com valores como inclusão, excelência, comunidade, responsabilidade social e felicidade. E enquanto olha para o futuro, a academia está <br> determinada a continuar inspirando e capacitando as pessoas a viverem vidas mais saudáveis, felizes e realizadas
+        </p>
+    </section>
+    <footer>
+        <p>  </p>
+    </footer>
+</body>
+</html>
+
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+  
+    </style>
+
+
+    <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações sobre nossos serviços ou para agendar uma visita à nossa academia.</p>
+        <address>
+            Rua Alencar vargita, 182<br>
+            Cidade São Paulo, SP
+        </address>
+        <p>Telefone: 11 98352-2936</p>
+        <p>Email: all.day2024@gmail.com</p>
+    </section>
+
+    <footer>
+        <p>  </p>
+    </footer>
+
+    <section id="services" class="services">
+        <h2>Nossos Serviços</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <h3>Personal Trainer</h3>
+                <p>Treinos personalizados para você alcançar os melhores resultados.</p>
+            </div>
+            <div class="service-item">
+                <h3>Aulas Coletivas</h3>
+                <p>Participe de aulas de spinning, yoga, pilates e muito mais.</p>
+            </div>
+            <div class="service-item">
+                <h3>Planos Nutricionais</h3>
+                <p>Planos alimentares elaborados por nutricionistas especializados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contato</h2>
+        <form action="processa_formulario.php" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ALL DAY. Todos os direitos reservados.</p>
+    </footer>
+   
+
+</body>
+</html>
+

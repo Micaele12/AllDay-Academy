@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de treino completo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden; /* Para evitar rolagem horizontal */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Alinhar itens centralmente */
+            justify-content: space-between; /* Distribuir espaço entre os itens */
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid rgba(56, 52, 52, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(56, 50, 50, 0.1);
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            color: rgb(37, 30, 30);
+            position: relative;
+            overflow-y: auto; /* Adicionado para habilitar rolagem vertical */
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            flex-grow: 1;
+        }
+
+        .search-box button {
+            background-color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .plan-box {
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 20px; /* Ajuste o padding conforme necessário */
+            margin-top: 10px; /* Reduzido o espaçamento superior */
+            margin-bottom: 10px; /* Adicionado espaçamento inferior */
+            text-align: center; /* Centralizar texto */
+        }
+
+        .plan-box h1 {
+            margin: 5px 0; /* Ajuste a margem para o espaçamento */
+            font-size: 18px; /* Tamanho do texto */
+        }
+
+        .estado-atual {
+            margin-top: 20px;
+        }
+
+        .estado-atual hr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Estilo para a logo */
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px; /* Espaçamento superior */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>ALL DAY</h1>
+            <img class="logo" src="ALL_DAY_LOGO.png" alt="Logo">
+            <a href="questionario.html">Questionário</a>
+            <a href="planos_de_treinos.html">Plano de Treino</a>
+            <a href="perfil.html">Conta</a>
+            <a href="tela_inicial.html" class="active">Sair</a>
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1>Plano de treino:</h1>
+                <div class="search-box">
+                    <script>
+                        function pesquisar() {
+                            const termo = document.getElementById('input-pesquisa').value.toLowerCase();
+                
+                            if (!termo) {
+                                alert('Por favor, insira uma palavra-chave para pesquisar.');
+                                return;
+                            }
+                
+                            if (termo.includes('iniciante')) {
+                                window.location.href = 'plano_de_treino_iniciante.html';
+                            } else if (termo.includes('avançado')) {
+                                window.location.href = 'plano_de_treino_avançado.html';
+                            } else if (termo.includes('intermediario')) {
+                                window.location.href = 'plano_de_treino_inter.html';
+                            } else if (termo.includes('sedentario')) {
+                                window.location.href = 'plano_de_treino_seden.html';
+                            }else {
+                                alert('Nenhuma página correspondente encontrada.');
+                            }
+                        }
+                    </script>
+                </head>
+                
+                <input type="text" id="input-pesquisa" placeholder="Pesquisar">
+                
+                <button class="search-button" onclick="pesquisar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+            <div class="plan-box">
+                <h1>Treino 2ª feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Voador 3x10</h1>
+                <h1>Supino inclinado com halteres 3x10</h1>
+                <h1>Adução com halteres 3x10</h1>
+                <h1>Tríceps francês 3x10</h1>
+                <h1>Tríceps pulley 3x10</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino 3ª feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Pulley costas 3x10</h1>
+                <h1>Remada sentada aparelho 3x10</h1>
+                <h1>Voador invertido 3x10</h1>
+                <h1>Rosca direta 3x10</h1>
+                <h1>Rosca concentrada 3x10</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino 4ª feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Abdominal supra 4x10</h1>
+                <h1>Abdominal obliq 3x10</h1>
+                <h1>Elevação lateral 3x10</h1>
+                <h1>Elevação frontal 3x10</h1>
+                <h1>Panturrilha sentado 3x10</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino 5ª feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Descanso</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino 6ª feira:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Leg 45 3x10</h1>
+                <h1>Agachamento hack 3x10</h1>
+                <h1>Extensora 3x10</h1>
+                <h1>Flexora 3x10</h1>
+                <h1>Panturrilha em pé 3x10</h1>
+            </div>
+            <div class="plan-box">
+                <h1>Treino Sábado:</h1>
+                <hr> <!-- Linha horizontal -->
+                <h1>Voador 3x10</h1>
+                <h1>Supino inclinado com halteres 3x10</h1>
+                <h1>Adução com halteres 3x10</h1>
+                <h1>Tríceps francês 3x10</h1>
+                <h1>Tríceps pulley 3x10</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

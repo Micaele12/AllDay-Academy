@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL DAY </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"> 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(to right, #ffffff, #f8f8f8);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #333, #555);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            border-bottom: 3px solid #444;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #444, #666);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .banner {
+            background-image: url('imagem_2024-05-13_225916674.png');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            font-size: 1.8em;
+            position: relative;
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .main-content {
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #f0f0f0, #e2e2e2);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .section h2 {
+            font-size: 1.8em;
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #444, #666);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, #666, #888);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+    
+#contato {
+    text-align: center;
+}
+
+#contato h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+#contato p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#contato address {
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+#contato a {
+    color: #16a085;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contato a:hover {
+    color: #1abc9c;
+}
+#sobre {
+            text-align: center;
+        }
+
+        #sobre h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        #sobre p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        #sobre img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ALL DAY</h1>
+    </header>
+
+    <nav>
+        <a href="tela_homer.html">Home</a>
+        <a href="planos_de_treinos.html">Treinos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="banner">
+        <h2>Bem-vindo à ALL DAY</h2>
+        <p>Descubra treinos personalizados para atingir seus objetivos!</p>
+    </div>
+
+    <div class="main-content">
+        <div class="section" id="questionario">
+            <h2>Questionário</h2>
+            <p>Antes de começarmos a planejar seu treino personalizado, precisamos saber mais sobre suas preferências e objetivos.</p>
+            <a href="questionario.html" class="button">Questionário</a>
+        </div>
+
+        <div class="section" id="treinos">
+            <h2>Treinos Recomendados</h2>
+            <p>Explore nossos treinos recomendados para diferentes níveis de condicionamento físico.</p>
+            <a href="planos_de_treinos.html" class="button">Ver Treinos</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section" id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma academia dedicada a ajudar você a alcançar seus objetivos de fitness. Nossos treinadores qualificados estão aqui para guiá-lo em sua jornada de fitness. Oferecemos uma variedade de serviços, incluindo aulas de grupo, treinamento pessoal e equipamentos de última geração. Na Academia ALL DAY, estamos comprometidos com a saúde e o bem-estar de nossos membros. Junte-se a nós hoje e comece a transformar sua vida!</p>
+        </div>
+
+        <div class="section" id="questionario">
+            <h2>Questionário</h2>
+            <p>Antes de começarmos a planejar seu treino personalizado, precisamos saber mais sobre suas preferências e objetivos.</p>
+            <a href="questionario.html" class="button">Questionário</a>
+        </div>
+
+        <div class="section" id="treinos">
+            <h2>Treinos Recomendados</h2>
+            <p>Explore nossos treinos recomendados para diferentes níveis de condicionamento físico.</p>
+            <a href="planos_de_treinos.html" class="button">Ver Treinos</a>
+        </div>
+    </div>
+
+
+    <section id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Entre em contato conosco para mais informações sobre nossos serviços ou para agendar uma visita à nossa academia.</p>
+        <address>
+            Rua Alencar vargita, 182<br>
+            Cidade São Paulo, SP
+        </address>
+        <p>Telefone: 11 98352-2936</p>
+        <p>Email: all.day2024@gmail.com</p>
+    </section>
+</body>
+</html>

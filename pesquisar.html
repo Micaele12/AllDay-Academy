@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa com Categorias</title>
+    <script>
+        function pesquisar() {
+            const termo = document.getElementById('input-pesquisa').value.toLowerCase();
+
+            if (!termo) {
+                alert('Por favor, insira uma palavra-chave para pesquisar.');
+                return;
+            }
+
+            if (termo.includes('iniciante')) {
+                window.location.href = 'plano_de_treino_iniciante.html';
+            } else if (termo.includes('avançado')) {
+                window.location.href = 'plano_de_treino_avançado.html';
+            } else if (termo.includes('intermediario')) {
+                window.location.href = 'plano_de_treino_inter.html';
+            } else if (termo.includes('sedentario')) {
+                window.location.href = 'plano_de_treino_seden.html';
+            }else {
+                alert('Nenhuma página correspondente encontrada.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Pesquisar</h1>
+    <input type="text" id="input-pesquisa" placeholder="Digite uma categoria (iniciante, avançado, lento)">
+    <button onclick="pesquisar()">Pesquisar</button>
+</body>
+</html>

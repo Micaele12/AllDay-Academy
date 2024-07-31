@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden; 
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            background-color: black;
+            color: white;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px; 
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid rgba(56, 52, 52, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(56, 50, 50, 0.1);
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            color: rgb(37, 30, 30);
+            position: relative;
+            overflow-y: auto; 
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            flex-grow: 1;
+        }
+
+        .search-box button {
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .plan-box {
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px; /* Espaçamento entre as caixas de plano */
+        }
+
+        .plan-box h1 {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .btn-enviar {
+            background-color: #4CAF50; /* Verde */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block; /* Para funcionar dentro do link */
+        }
+
+        .btn-enviar:hover {
+            background-color: #45a049; /* Cor mais escura quando hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>ALL DAY</h1>
+            <img class="logo" src="ALL_DAY_LOGO.png" alt="Logo"> 
+            <a href="questionario.html" style="text-decoration: underline;">Questionário</a>
+            <a href="planos_de_treinos.html">Plano de Treino</a>
+            <a href="perfil.html">Conta</a>
+            <a href="tela_inicial.html">Voltar</a>
+        </div>
+        <div class="main">
+            <div class="header">
+                <h1>Plano de treino:</h1>
+                <div class="search-box">
+                    <script>
+                        function pesquisar() {
+                            const termo = document.getElementById('input-pesquisa').value.toLowerCase();
+                
+                            if (!termo) {
+                                alert('Por favor, insira uma palavra-chave para pesquisar.');
+                                return;
+                            }
+                
+                            if (termo.includes('iniciante')) {
+                                window.location.href = 'plano_de_treino_iniciante.html';
+                            } else if (termo.includes('avançado')) {
+                                window.location.href = 'plano_de_treino_avançado.html';
+                            } else if (termo.includes('intermediario')) {
+                                window.location.href = 'plano_de_treino_inter.html';
+                            } else if (termo.includes('sedentario')) {
+                                window.location.href = 'plano_de_treino_seden.html';
+                            }else {
+                                alert('Nenhuma página correspondente encontrada.');
+                            }
+                        }
+                    </script>
+                </head>
+                
+                <input type="text" id="input-pesquisa" placeholder="Pesquisar">
+                
+                <button class="search-button" onclick="pesquisar()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="plan-box">
+                <p>Qual é o seu estado físico?</p>
+                <form id="form-estado-fisico">
+                    <input type="radio" id="sedentario" name="estado_fisico" value="sedentario">
+                    <label for="sedentario">Sedentário</label><br>
+                    <input type="radio" id="iniciante" name="estado_fisico" value="iniciante">
+                    <label for="iniciante">Iniciante</label><br>
+                    <input type="radio" id="medio" name="estado_fisico" value="medio">
+                    <label for="medio">Médio</label><br>
+                    <input type="radio" id="avancado" name="estado_fisico" value="avancado">
+                    <label for="avancado">Avançado</label><br>
+                </form>
+            </div>
+
+            <div class="plan-box">
+                <h1>Quantos dias por semana você pretende treinar?</h1>
+                <hr> 
+                <form id="form-frequencia">
+                    <label><input type="radio" name="frequencia" value="1_vez"> 1 vez</label><br>
+                    <label><input type="radio" name="frequencia" value="
+                        2_vezes"> 2 vezes</label><br>
+                        <label><input type="radio" name="frequencia" value="3_vezes"> 3 vezes</label><br>
+                        <label><input type="radio" name="frequencia" value="4_vezes"> 4 vezes</label><br>
+                        <label><input type="radio" name="frequencia" value="5_vezes"> 5 vezes</label><br>
+                        <label><input type="radio" name="frequencia" value="6_vezes"> 6 vezes</label><br>
+                        <label><input type="radio" name="frequencia" value="7_vezes"> 7 vezes</label><br>
+                    </form>
+                </div>
+    
+                <div class="plan-box">
+                    <h1>Qual o seu objetivo principal?</h1>
+                    <hr> 
+                    <form id="form-objetivo">
+                        <label><input type="radio" name="objetivo" value="ganho_massa"> Ganho de massa muscular</label><br>
+                        <label><input type="radio" name="objetivo" value="melhoria_condicionamento"> Melhoria do condicionamento físico</label><br>
+                        <label><input type="radio" name="objetivo" value="definicao"> Definição muscular</label><br>
+                    </form>
+                </div>
+    
+                <div class="plan-box">
+                    <h1>Qual o seu peso atual?</h1>
+                    <hr> 
+                    <input type="number" id="peso" placeholder="Digite seu peso" name="peso" step="0.1" required />
+                </div>
+    
+                <div class="plan-box">
+                    <h1>Qual a sua idade?</h1>
+                    <hr> 
+                    <input type="number" id="idade" placeholder="Digite sua idade" name="idade" required />
+                </div>
+    
+                <div class="plan-box">
+                    <h1>Qual a sua altura?</h1>
+                    <hr> 
+                    <input type="number" id="altura" placeholder="Digite sua altura" name="altura" step="1" required />
+                </div>
+    
+                <a href="javascript:void(0);" class="btn-enviar" onclick="calcularPontuacao()">Enviar</a>
+            </div>
+        </div>
+        <script>
+            function calcularPontuacao() {
+                let estadoFisico = document.querySelector('input[name="estado_fisico"]:checked').value;
+                let frequencia = document.querySelector('input[name="frequencia"]:checked').value;
+                let objetivo = document.querySelector('input[name="objetivo"]:checked').value;
+                let idade = document.getElementById('idade').value;
+                let peso = document.getElementById('peso').value;
+                let altura = document.getElementById('altura').value;
+    
+                let pontos = 0;
+                if (estadoFisico === "sedentario") pontos += 5;
+                else if (estadoFisico === "iniciante") pontos += 10;
+                else if (estadoFisico === "medio") pontos += 30;
+                else if (estadoFisico === "avancado") pontos += 50;
+    
+                if (frequencia === "1_vez") pontos += 10;
+                else if (frequencia === "2_vezes") pontos += 5;
+                else if (frequencia === "3_vezes") pontos += 10;
+                else if (frequencia === "4_vezes") pontos += 20;
+                else if (frequencia === "5_vezes") pontos += 30;
+                else if (frequencia === "6_vezes") pontos += 40;
+                else if (frequencia === "7_vezes") pontos += 50;
+    
+                if (objetivo === "ganho_massa") pontos += 10;
+                else if (objetivo === "melhoria_condicionamento") pontos += 20;
+                else if (objetivo === "definicao") pontos += 30;
+    
+                // Calculando pontos com base na idade
+                if (idade <= 20) pontos += 10;
+                else if (idade <= 30) pontos += 20;
+                else if (idade <= 40) pontos += 25;
+                else if (idade <= 50) pontos += 5;
+                else pontos += 5;
+    
+                // Calculando pontos com base no IMC
+                let imc = peso / ((altura / 100) * (altura / 100));
+                if (imc < 18.5) pontos += 10;
+                else if (imc < 24.9) pontos += 20;
+                else if (imc < 29.9) pontos += 30;
+                else pontos += 40;
+    
+                // Salvando as informações no localStorage
+                localStorage.setItem('pontos', pontos);
+                localStorage.setItem('estadoFisico', estadoFisico);
+                localStorage.setItem('frequencia', frequencia);
+                localStorage.setItem('objetivo', objetivo);
+                localStorage.setItem('idade', idade);
+                localStorage.setItem('peso', peso);
+                localStorage.setItem('altura', altura);
+                
+                // Redirecionamento para a página do treino correspondente
+                redirecionarParaPlanoDeTreino(pontos);
+            }
+    
+            function redirecionarParaPlanoDeTreino(pontos) {
+                let url = '';
+                
+                // Determinando a URL com base nos pontos
+                if (pontos <= 0) {
+                    url = 'plano_de_treino_seden.html';
+                } else if (pontos <= 70) {
+                    url = 'plano_de_treino_iniciante.html';
+                } else if (pontos <= 100) {
+                    url = 'plano_de_treino_inter.html';
+                } else if (pontos <= 140) {
+                    url = 'plano_de_treino_avançado.html';
+                } else {
+                    console.error('Pontuação inválida.');
+                    return;
+                }
+                
+                // Redirecionamento para a página do treino correspondente
+                window.location.href = url;
+            }
+        </script>
+    </body>
+    </html>
+    

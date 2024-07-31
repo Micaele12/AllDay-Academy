@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Escolha seu Plano de Treino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- Para ícones -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: #fff; /* Branco */
+            color: #000; /* Preto */
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 70px;
+            background: #000; /* Preto */
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            width: 180px; /* Largura menor para os cartões */
+            background: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra leve */
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .card h2 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333; /* Cinza escuro */
+        }
+
+        .card p {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            color: #555; /* Cinza */
+        }
+
+        .card .icon {
+            font-size: 2em;
+            color: #333; /* Cinza escuro */
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #000; /* Preto */
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: #333; /* Cinza escuro para o hover */
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .card {
+                width: 80%;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Escolha seu Plano de Treino</h1>
+    <p>Selecione o plano que melhor se adapta ao seu nível de experiência e objetivo.</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <i class="fas fa-dumbbell icon"></i>
+        <h2>Avançado</h2>
+        <p>Para quem busca desafios e tem muita experiência.</p>
+        <a href="telaA.html">Selecionar</a>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-running icon"></i>
+        <h2>Intermediário</h2>
+        <p>Para quem já tem alguma experiência e quer progredir.</p>
+        <a href="telaIT.html">Selecionar</a>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-walking icon"></i>
+        <h2>Iniciante</h2>
+        <p>Para quem está começando a treinar e precisa de orientação.</p>
+        <a href="telaI.html">Selecionar</a>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-bed icon"></i>
+        <h2>Sedentário</h2>
+        <p>Para quem está iniciando uma mudança de vida.</p>
+        <a href="telaS.html">Selecionar</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Perfil</title>
+    <style>
+        /* Estilos globais */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+        }
+
+        .profile-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .profile-container:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 2em;
+        }
+
+        .profile-info {
+            margin-bottom: 30px;
+        }
+
+        .profile-info h2 {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 1.5em;
+        }
+
+        .profile-info p {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .btn-editar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-editar:hover {
+            background-color: #45a049;
+        }
+
+        .btn-editar:active {
+            transform: scale(0.98);
+        }
+    </style>
+    <script>
+        // Função para carregar os dados do localStorage e exibi-los
+        function loadProfile() {
+            document.getElementById('estado_fisico').textContent = localStorage.getItem('estado_fisico') || "Não informado";
+            document.getElementById('frequencia_treino').textContent = localStorage.getItem('frequencia_treino') || "Não informado";
+            document.getElementById('objetivo_principal').textContent = localStorage.getItem('objetivo_principal') || "Não informado";
+            document.getElementById('atividades_preferidas').textContent = localStorage.getItem('atividades_preferidas') || "Não informado";
+            document.getElementById('peso').textContent = localStorage.getItem('peso') || "Não informado";
+            document.getElementById('idade').textContent = localStorage.getItem('idade') || "Não informado";
+            document.getElementById('altura').textContent = localStorage.getItem('altura') || "Não informado";
+        }
+
+        // Carregar os dados do perfil quando a página for carregada
+        window.onload = loadProfile;
+    </script>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Perfil</h1>
+        <div class="profile-info">
+            <h2>Estado Físico</h2>
+            <p id="estado_fisico">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Frequência de Treino</h2>
+            <p id="frequencia_treino">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Objetivo Principal</h2>
+            <p id="objetivo_principal">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Atividades Físicas Preferidas</h2>
+            <p id="atividades_preferidas">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Peso (kg)</h2>
+            <p id="peso">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Idade</h2>
+            <p id="idade">Carregando...</p>
+        </div>
+        <div class="profile-info">
+            <h2>Altura (cm)</h2>
+            <p id="altura">Carregando...</p>
+        </div>
+        <a href="perfil.html" class="btn-editar">Alterar Dados</a>
+    </div>
+</body>
+</html>

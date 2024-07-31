@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos de Treino</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .sidebar img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .sidebar a {
+            color: #fff;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+        }
+        .main {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main h1 {
+            font-size: 24px;
+        }
+        .btn-plano-treino {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>ALL DAY</h1>
+            <img class="logo" src="ALL_DAY_LOGO.png" alt="Logo"> 
+            <a href="questionario.html">Questionário</a>
+            <a href="planos_de_treinos.html" style="text-decoration: underline;">Plano de Treino</a>
+            <a href="perfil.html">Conta</a>
+            <a href="tela_inicial.html">Voltar</a>
+        </div>
+        <div class="main">
+            <h1>Bem-vindo à seção de Planos de Treino</h1>
+            <p>Escolha o plano de treino mais adequado para você.</p>
+            <a href="javascript:void(0);" class="btn-plano-treino" onclick="redirecionarPlanoTreino()">Plano de Treino</a>
+        </div>
+    </div>
+    <script>
+        function redirecionarPlanoTreino() {
+            let pontos = localStorage.getItem('pontos');
+            if (pontos !== null) {
+                pontos = parseInt(pontos);
+                if (pontos <= 50) {
+                    window.location.href = 'plano_de_treino_seden.html';
+                } else if (pontos <= 100) {
+                    window.location.href = 'plano_de_treino_iniciante.html';
+                } else if (pontos <= 200) {
+                    window.location.href = 'plano_de_treino_inter.html';
+                } else {
+                    window.location.href = 'plano_de_treino_avancado.html';
+                }
+            } else {
+                alert('Por favor, complete o questionário primeiro.');
+                window.location.href = 'questionario.html';
+            }
+        }
+    </script>
+</body>
+</html>
